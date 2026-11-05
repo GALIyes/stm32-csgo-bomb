@@ -1,0 +1,48 @@
+# ---- Keil MDK build output ----
+MDK-ARM/Objects/
+MDK-ARM/Listings/
+MDK-ARM/DebugConfig/
+MDK-ARM/RTE/
+# everything under the output folder is a build artefact, except the firmware
+# image (and the scatter file, which the project points at)
+MDK-ARM/key_led/*
+!MDK-ARM/key_led/key_led.hex
+!MDK-ARM/key_led/key_led.sct
+MDK-ARM/*.map
+MDK-ARM/*.lst
+MDK-ARM/*.build_log.htm
+MDK-ARM/build_uv4.txt
+*.uvguix.*
+*.uvoptx
+*.bak
+
+# ---- compiler intermediates ----
+MDK-ARM/**/*.o
+MDK-ARM/**/*.d
+MDK-ARM/**/*.crf
+MDK-ARM/**/*.axf
+MDK-ARM/**/*.lnp
+MDK-ARM/**/*.dep
+MDK-ARM/**/*.htm
+
+# ---- CMSIS bulk this project does not build against ----
+# The include paths only pull in CMSIS/Include and
+# CMSIS/Device/ST/STM32F1xx/Include. Lib/ alone is 35 MB of pre-built ARM
+# libraries; DSP/, NN/, RTOS2/ and Core_A/ are not referenced at all.
+Drivers/CMSIS/Lib/
+Drivers/CMSIS/DSP/
+Drivers/CMSIS/NN/
+Drivers/CMSIS/RTOS2/
+Drivers/CMSIS/Core_A/
+
+# ---- OS / editor ----
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
+
+# ---- local scratch ----
+.tmp_preview/
+# loose screenshots pasted next to the sources
+/Snipaste_*.png
+/screenshot*.png
